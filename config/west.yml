@@ -1,0 +1,38 @@
+manifest:
+  defaults:
+    revision: v0.3
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: hitsmaxft
+      url-base: https://github.com/hitsmaxft
+    - name: urob
+      url-base: https://github.com/urob
+    - name: janpfischer
+      url-base: https://github.com/janpfischer
+    - name: prospector
+      url-base: https://github.com/t-ogura
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: v0.3
+      clone-depth: 1
+      import: app/west.yml
+    - name: zmk-keyboard-cornix
+      remote: hitsmaxft
+      revision: main
+      clone-depth: 1
+    - name: zmk-helpers
+      remote: urob
+      revision: main
+      clone-depth: 1
+    - name: zmk-dongle-screen
+      remote: janpfischer
+      revision: main
+      clone-depth: 1
+    - name: prospector-zmk-module
+      remote: prospector
+      revision: v2.0.0  # Use specific version tag
+      path: modules/prospector-zmk-module
+  self:
+    path: config
